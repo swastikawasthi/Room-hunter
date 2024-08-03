@@ -1,11 +1,9 @@
 const express = require('express');
 const path = require('path');
-const fs =require('fs')
 const app = express();
 const port =3000;
 
-rdata=fs.readFileSync('maindata.json','utf8')
-jsondata = JSON.parse(rdata)
+jsondata = [];
 
 
 app.use(express.static('public'));
@@ -21,7 +19,7 @@ app.get('/api',(req,res)=>{
 app.get('/add-home',(req,res)=>{
     formdata = req.query;
     jsondata.push(formdata)
-    fs.writeFileSync('maindata.json',JSON.stringify(jsondata,null,2))
+    
     res.redirect('/')
 })
 //------------------------------------------------
@@ -33,7 +31,7 @@ for(i=0;i<jsondata.length;i++){
     if((jsondata[i]).ownername==delt.delname && (jsondata[i]).monum==delt.delnum && (jsondata[i]).loc==delt.delloc && (jsondata[i]).disc==delt.deldisc ){jsondata.splice(i,1);break}
 }
 
-fs.writeFileSync('maindata.json',JSON.stringify(jsondata,null,2)) 
+) 
     res.redirect('/')
 })
 
