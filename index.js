@@ -31,7 +31,7 @@ for(i=0;i<jsondata.length;i++){
     if((jsondata[i]).ownername==delt.delname && (jsondata[i]).monum==delt.delnum && (jsondata[i]).loc==delt.delloc && (jsondata[i]).disc==delt.deldisc ){jsondata.splice(i,1);break}
 }
 
-) 
+
     res.redirect('/')
 })
 
