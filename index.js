@@ -23,7 +23,7 @@ connection.connect((err) => {
 
 if (err) {
 
-console.error('Error connecting: D + err.stack);
+console.error('Error connecting: D '+ err.stack);
 
 return;
 
