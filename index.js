@@ -3,6 +3,33 @@ const path = require('path');
 const app = express();
 const port =3000;
 
+
+
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+
+host: 'sql12.freesqldatabase.com',
+
+user: 'sql12724651',
+
+password: 'x9uJedswEf',
+
+database: 'sql12724651',
+
+port: 3306});
+
+connection.connect((err) => {
+
+if (err) {
+
+console.error('Error connecting: D + err.stack);
+
+return;
+
+} console.log('Connected as id ' + connection.threadId); });
+
+// Remember to close the connection when you're done connection.end();
 jsondata = [];
 
 
