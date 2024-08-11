@@ -55,6 +55,7 @@ app.get('/add-home',(req,res)=>{
         if (err) throw err;
         console.log('new row inserted');
     });
+    connection.end();
     res.redirect('/')
 })
 //------------------------------------------------
