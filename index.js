@@ -33,6 +33,7 @@ return;
 jsondata = [];
 
 
+
 app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
@@ -46,7 +47,10 @@ app.get('/api',(req,res)=>{
 app.get('/add-home',(req,res)=>{
     formdata = req.query;
     jsondata.push(formdata)
-    
+    insertquery =`INSERT INTO data ("ownername","monum","loc","disc") VALUES(?,?,?,?)`;
+    value= [formdata.ownwername,formdata.monum,formdata.loc,formdata.disc];
+
+    connection.query(insertquery,value);
     res.redirect('/')
 })
 //------------------------------------------------
