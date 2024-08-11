@@ -50,7 +50,11 @@ app.get('/add-home',(req,res)=>{
     insertquery =`INSERT INTO data ("ownername","monum","loc","disc") VALUES(?,?,?,?)`;
     value= [formdata.ownwername,formdata.monum,formdata.loc,formdata.disc];
 
-    connection.query(insertquery,value);
+    connection.query(insertquery,value,(err, result)=>{
+
+        if (err) throw err;
+        console.log('new row inserted');
+    });
     res.redirect('/')
 })
 //------------------------------------------------
